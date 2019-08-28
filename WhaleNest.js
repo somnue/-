@@ -79,10 +79,16 @@
             title:"分享标题",
             desc:"分享描述",
             link:window.location.href,
-            imgUrl:"https://tinypng.com/images/panda-chewing.png",
-            timeLineCallback:function(){},
+            imgUrl:"http://byu6317080001.my3w.com/ljj/panda-chewing.png",
+          
             friendCallback:function(){}
-        } 
+        } ,
+        pic:{
+          
+            imgUrl ={"imgUrl1":"http://byu6317080001.my3w.com/ljj/1.jpg", "imgUrl2":"http://byu6317080001.my3w.com/ljj/2.jpg", "imgUrl3":"http://byu6317080001.my3w.com/ljj/3.jpg", "imgUrl4":"http://byu6317080001.my3w.com/ljj/3.jpg",},
+            timeLineCallback:function(){},
+          
+        }
 
 	}
 
@@ -125,16 +131,14 @@
 
     }
 
-    Share.setWX = function(info){
+    Share.setWX = function(pic){
 
-        var _info = info;
+        var _info = pic;
 
         if(!this.shareSetting.isReady)return false;
 
         wx.onMenuShareTimeline({
             debug: false, 
-            title : _info.fTitle||_info.title, 
-            link : _info.link, 
             imgUrl : _info.imgUrl,    
             success : function() {
                 _info.timeLineCallback();
